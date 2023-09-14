@@ -1,17 +1,31 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import Search from './pages/Search'
+import NoPage from './pages/Search'
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import MoviePage from './components/MoviePage';
+import Error from './components/Error';
+
+export default function Index() {
+  return (
+    <BrowserRouter>
+      <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="/search" element={<Search />} />
+          <Route path="/movie/:id" element={<MoviePage />} />
+          <Route path="/error" element={<Error />} />
+          <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
+    </BrowserRouter>
+
+  );
+}
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Index />
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
