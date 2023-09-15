@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import useFetch from '../useFetch';
 import Card from './Card';
 import '../App.css';
@@ -7,12 +7,6 @@ import Spinner from './Spinner';
 export default function Body() {
     const [data] = useFetch("https://api.themoviedb.org/3/discover/movie?api_key=a1bfe11e0614712a754176f6b6e156ba&include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc");
     console.log(data)
-    // let i;
-    // var dat2 =[]
-    // for (let i = 0; i < 10; i++) {
-    //     dat2.append(data.results[i])
-    //   }
-    //   console.log(dat2)
     return (
         <div className='theBody'>
             <h2 className='top10'>Top 10 Movies</h2>

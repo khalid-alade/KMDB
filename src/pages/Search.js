@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Outlet, Link } from "react-router-dom";
 import Spinner from "../components/Spinner";
-import Nuller from '../components/Nuller';
 
 export default function Search() {
     const [searchText, setSearchText] = useState("");

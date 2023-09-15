@@ -1,5 +1,4 @@
 import React from 'react';
-import useFetch2 from '../useFetch2';
 import { Outlet, Link } from "react-router-dom";
 
 
