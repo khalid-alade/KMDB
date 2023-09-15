@@ -13,7 +13,7 @@ export default function Card(props) {
         <div className="card" data-testid="movie-card">
             <Link to={'movie/' + props.id}>
             <div className="poster" data-testid="movie-poster">
-                <img src={props.image} />
+                <img alt='movie poster' src={props.image} />
             </div>
             </Link>
             <div className="lower">

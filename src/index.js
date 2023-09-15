@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Search from './pages/Search'
-import NoPage from './pages/Search'
 import App from './App';
 import MoviePage from './components/MoviePage';
 import Error from './components/Error';

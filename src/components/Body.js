@@ -6,7 +6,6 @@ import Spinner from './Spinner';
 
 export default function Body() {
     const [data] = useFetch("https://api.themoviedb.org/3/discover/movie?api_key=a1bfe11e0614712a754176f6b6e156ba&include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc");
-    console.log(data)
     return (
         <div className='theBody'>
             <h2 className='top10'>Top 10 Movies</h2>

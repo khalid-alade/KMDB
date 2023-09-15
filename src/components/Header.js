@@ -1,9 +1,5 @@
 import React from 'react';
-import { Outlet, Link } from "react-router-dom";
-
-
-
-var Access_key = 'a1bfe11e0614712a754176f6b6e156ba'
+import { Link } from "react-router-dom";
 
 export default function Header() {
 

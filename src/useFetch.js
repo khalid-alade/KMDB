@@ -14,5 +14,3 @@ const useFetch = (url) => {
 };
 
 export default useFetch;
-
-// https://api.themoviedb.org/3/search/multi?api_key=${Access_key}&language=en-US&query=${searchText}&page=${page}&include_adult=false

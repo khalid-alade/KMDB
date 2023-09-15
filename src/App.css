@@ -18,7 +18,6 @@ header {
 }
 
 .logoText {
-  /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
   font-weight: 900;
   font-size: 30px;
   color: white;
@@ -28,8 +27,6 @@ header {
 .inputSpan {
   height: 45px;
   width: 40%;
-  /* border-radius: 10px; */
-  /* border: 2px solid white; */
   display: flex;
 }
 
@@ -86,9 +83,9 @@ button:hover {
   position: relative;
   z-index: 18000;
 }
-.topCard{
+
+.topCard {
   position: absolute;
-  /* right: 65px; */
   left: 60px;
   bottom: 18%;
   width: 45%;
@@ -98,6 +95,7 @@ button:hover {
 
 .theBody {
   padding: 0 65px;
+  background-color: whitesmoke;
 }
 
 .top10 {
@@ -106,8 +104,6 @@ button:hover {
 
 .wrapper {
   display: grid;
-  /* height: 400px; */
-  /* grid-template-columns: auto auto auto auto auto; */
   grid-template-columns: 19% 19% 19% 19% 19%;
   gap: 20px;
   position: relative;
@@ -138,6 +134,7 @@ button:hover {
 }
 
 .spin {
+  stroke: 2px solid white;
   width: 50px;
   height: 50px;
   border-radius: 100px;
@@ -150,7 +147,6 @@ button:hover {
   animation-name: spinner;
   animation-duration: 0.6s;
   animation-iteration-count: infinite;
-  /* animation-direction: alternate; */
 }
 
 .spin svg {
@@ -163,19 +159,6 @@ button:hover {
   0% {
     transform: rotate(0deg);
   }
-
-  /* 
-  25% {
-    transform: rotate(140deg);
-  } */
-
-  /* 50% {
-    transform: rotate(210deg);
-  } */
-
-  /* 75% {
-    transform: rotate(280deg);
-  } */
 
   100% {
     transform: rotate(360deg);
@@ -200,18 +183,17 @@ button:hover {
 }
 
 .allWrapper {
+  background-color: whitesmoke;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: row;
-  /* background-color: black; */
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .sideBar {
   padding: 20px 0;
-  /* text-align: center; */
   width: 15%;
-  height: 100%;
+  height: 100vh;
   border: 2px solid rgb(171, 169, 169);
   border-radius: 0 17px 17px 0;
 }
@@ -238,8 +220,6 @@ button:hover {
 }
 
 .sideBar a {
-  /* height: 100%;
-  width: 100%; */
   display: block;
   padding: 15px 15px;
   display: flex;
@@ -262,18 +242,13 @@ button:hover {
 }
 
 .right {
-  /* background-color: green; */
   width: 85%;
-  height: 100%;
-  padding: 20px;
+  min-height: 100%;
+  padding: 20px 40px;
 }
 
 .rightTop {
   position: relative;
-  overflow-y: scroll;
-  height: 70%;
-  /* background-color: rgb(93, 34, 204); */
-  /* border-radius: 17px 17px 0 0; */
   border-radius: 17px;
 }
 
@@ -281,16 +256,14 @@ button:hover {
   height: 45px;
   width: 50%;
   display: flex;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 25px;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   border: 4px solid rgb(171, 4, 4);
   border-radius: 10px;
-  /* background-color: rgb(171, 4, 4); */
 }
 
 input {
@@ -302,7 +275,6 @@ input {
   outline: 0;
   border: 0;
   font-weight: bold;
-  /* border-radius: 9px; */
 }
 
 input::placeholder {
@@ -335,19 +307,27 @@ input::placeholder {
 
 .sImage {
   width: 100%;
-  /* max-height: 100%; */
 }
 
 .err {
   text-align: center;
+  min-height: 100vh;
+}
+.errPage{
+  background-color: whitesmoke;
 }
 
 .errLogo {
-  color: black;
-  margin: 20px;
+  color: rgb(231, 230, 230);
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 10px;
   display: block;
+  background-color: black;
+  text-align: center;
 }
-.logo3{
+
+.logo3 {
   display: none;
   text-align: center;
   margin-left: 0;
@@ -355,16 +335,17 @@ input::placeholder {
 }
 
 @media only screen and (max-width: 1190px) {
-  .logo2{
+  .logo2 {
     text-align: center;
     font-size: 20px;
   }
-  .logo3{
+
+  .logo3 {
     font-size: 35px;
   }
+
   .wrapper {
     grid-template-columns: auto auto auto auto;
-    /* grid-template-columns: 24% 24% 24% 24%; */
   }
 
   .signIn {
@@ -381,30 +362,42 @@ input::placeholder {
     width: 70%;
     justify-content: unset;
   }
-  .topCard{
+
+  .topCard {
     width: 65%;
     left: 0;
     right: 0;
     margin: auto;
   }
+
+  .inputSpan2 {
+    width: 90%;
+  }
 }
 
 @media only screen and (max-width: 930px) {
-  .logo2{
+  .logo2 {
     font-size: 15px;
   }
-  .logo3{
+
+  .logo3 {
     font-size: 35px;
   }
+
   .top {
     height: max-content;
   }
-  .rightTop{
-    height: 50%;
+
+  .sideBar {
+    width: 20%;
   }
-  .topCard{
+
+  .right {
+    width: 80%;
+  }
+
+  .topCard {
     width: 90%;
-    /* top: 30%; */
   }
 }
 
@@ -418,13 +411,12 @@ input::placeholder {
 }
 
 @media only screen and (max-width: 805px) {
-  button{
-  padding: 20px;
+  button {
+    padding: 20px;
   }
+
   .wrapper {
     grid-template-columns: auto auto auto auto;
-    /* grid-template-columns: 24% 24% 24% 24%; */
-    
   }
 
   header {
@@ -434,46 +426,70 @@ input::placeholder {
   .theBody {
     padding: 20px 30px;
   }
+
+  .icon2 {
+    padding: 5px;
+  }
 }
 
 @media only screen and (max-width: 762px) {
+  .sIcon {
+    width: 13%;
+  }
+
+  .inputSpan2 input {
+    padding: 0 10px;
+  }
+
   .top {
     height: max-content;
   }
-  .logo2{
+
+  .logo2 {
     display: none;
   }
-  .logo3{
+
+  .logo3 {
     font-size: 35px;
   }
-  .logo3{
+
+  .logo3 {
     display: block;
   }
-  .yo p{
+
+  .yo p {
     display: none;
   }
-  /* .sideBar{
-    border-radius: 0;
-  } */
-  .sideBar a{
+
+  .sideBar a {
     justify-content: center;
     font-size: 50px;
     padding: 10px 5px;
   }
-  .yo svg{
+
+  .yo svg {
     width: 30px;
     height: 30px;
   }
-  .topCard{
+
+  .topCard {
     width: 90%;
-    /* top: 40%; */
   }
-  /* .rightTop{
-    border-radius: 0;
-  } */
+
 }
 
 @media only screen and (max-width: 600px) {
+  .right{
+    padding: 20px;
+  }
+  .inputSpan2 {
+    width: 95%;
+  }
+
+  .icon2 {
+    padding: 2px;
+  }
+
   .wrapper {
     grid-template-columns: auto auto auto;
   }
@@ -481,10 +497,12 @@ input::placeholder {
   header {
     padding: 20px;
   }
-  .topCard{
+
+  .topCard {
     bottom: 14%;
   }
-  .inputSpan{
+
+  .inputSpan {
     margin-top: 20px;
   }
 
@@ -504,40 +522,26 @@ input::placeholder {
   .poster img {
     max-height: 200px;
   }
-  .rightTop{
-    height: 40%;
-  }
-  /* .right{
-    padding: 10px;
-  } */
-  .rightButt{
+
+  .rightButt {
     padding: 15px 0;
   }
 }
 
-/* @media only screen and (max-width: 515px) {
-  .wrapper {
-    grid-template-columns: auto auto auto;
-    grid-template-columns: 32% 32% 32%;
-  }
-} */
 
 @media only screen and (max-width: 515px) {
   .wrapper {
     grid-template-columns: 47% 47%;
-    /* padding-right: 30px; */
   }
+
   .poster img {
     max-height: 240px;
   }
-  /* .rightTop{
-    height: 40%;
-  } */
+
 }
 
 @media only screen and (max-width: 420px) {
   .wrapper {
-    /* grid-template-columns: auto; */
     gap: 20px;
     padding-right: 0;
     padding-bottom: 30px;
@@ -549,20 +553,22 @@ input::placeholder {
 }
 
 @media only screen and (max-width: 370px) {
-
-  /* .wrapper{
-    grid-template-columns: auto auto auto;
-  } */
   .poster img {
     max-height: 190px;
   }
 }
-footer{
-  color: black;
+
+footer {
+  color: rgb(214, 210, 210);
   padding: 20px;
-  padding-top: 0;
   text-align: center;
+  background-color: black;
+  font-weight: bold;
 }
-footer p{
+
+footer p {
   display: inline;
+}
+footer a {
+  color: rgb(214, 210, 210);
 }

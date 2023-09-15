@@ -1,43 +1,36 @@
-import React, { useState, useEffect } from 'react';
-import { Outlet, Link } from "react-router-dom";
+import React, { useState, useEffect, useCallback } from 'react';
+import { Link } from "react-router-dom";
 import Spinner from "../components/Spinner";
+import Footer from '../components/Footer';
 
 export default function Search() {
-    const [searchText, setSearchText] = useState("");
-    const [page, setPage] = useState(1);
     const [content, setContent] = useState('');
-    console.log(content)
-    const fetchSearch = async () => {
-        fetch(`https://api.themoviedb.org/3/search/multi?api_key=a1bfe11e0614712a754176f6b6e156ba&language=en-US&query=${searchText}&include_adult=false`)
-        .then((res) => res.json())
-        .then((data) => setContent(data.results.slice(0, 1)))
-        .catch ((error) => window.location = '/error');
 
+    const fetchSearch = useCallback(async () => {
+        document.querySelector('.spin').style.display = 'block'
+        setTimeout(function () {
+            var stext = document.querySelector('input').value
+            if(stext === ''){
+                alert('Please search for a valid movie name')
+            }
+            fetch(`https://api.themoviedb.org/3/search/multi?api_key=a1bfe11e0614712a754176f6b6e156ba&language=en-US&query=${stext}&include_adult=false`)
+                .then((res) => res.json())
+                .then((data) => setContent(data.results.slice(0, 1)))
+                .catch((error) => window.location = '/error');
+            document.querySelector('.spin').style.display = 'none'
+        }, 1000)
+    }, [])
 
-
-        // const data = await fetch(`https://api.themoviedb.org/3/search/multi?api_key=a1bfe11e0614712a754176f6b6e156ba&language=en-US&query=${searchText}&include_adult=false`);
-        // var res = await data.json();
-        // var res2 = res.results.slice(0, 1)
-        // if(!res){
-        //     window.location = '/error'
-        // }
-        // setContent(res2);
-        document.querySelector('.spin').style.display = 'none'
-    };
     useEffect(() => {
-        fetchSearch();
+        document.querySelector('.spin').style.display = 'none'
     }, []);
 
-    const Trigger = (e) => {
-        setSearchText(e.target.value);
-    };
-    const Search = () => {
-        document.querySelector('.spin').style.display = 'block'
-        fetchSearch();
-    };
+    // const Trigger = (e) => {
+    //     setSearchText(e.target.value);
+    // };
 
     return (
-
+<>
         <div className='allWrapper'>
             <div className='sideBar'>
                 <span className='logo2'>KhalidMDB</span>
@@ -73,8 +66,8 @@ export default function Search() {
                 <div className='rightTop'>
 
                     <span className='inputSpan2'>
-                        <input type='text' placeholder='What do you want to watch?' onChange={Trigger} />
-                        <button className="sIcon icon2" onClick={Search}>
+                        <input type='text' placeholder='What do you want to watch?' />
+                        <button className="sIcon icon2" onClick={fetchSearch}>
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                 <circle cx="10" cy="10" r="7" />
@@ -82,9 +75,9 @@ export default function Search() {
                             </svg>
                         </button>
                     </span>
-
-                    <img className='sImage' src={content[0] && `https://image.tmdb.org/t/p/original/${content[0].poster_path}`} />
-
+                    {content[0] &&
+                        <img alt='movie poster' className='sImage' src={content[0] && `https://image.tmdb.org/t/p/original/${content[0].poster_path}`} />
+                    }
                 </div>
 
 
@@ -98,5 +91,7 @@ export default function Search() {
 
             </div>
         </div>
+        <Footer />
+        </>
     );
 }
