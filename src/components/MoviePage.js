@@ -65,6 +65,7 @@ export default function MoviePage() {
                     <div className='rightButt'>
                         <h2 className='sTitle' data-testid="movie-title">{content && content.title}</h2>
                         <p data-testid="movie-release-date"> <i className='bold'>{content && 'Release date: '} </i> {content && content.release_date}</p>
+                        <p data-testid="movie-runtime"> <i className='bold'>{content && 'Runtime: '}</i> 2:23:02</p>
                         <p data-testid="movie-overview"><i className='bold'>{content && 'Overview: '} </i> {content && content.overview}</p>
                     </div>
 

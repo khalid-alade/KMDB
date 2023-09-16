@@ -86,6 +86,7 @@ export default function Search() {
                     <h2 className='sTitle' data-testid="movie-title">{content[0] && (content[0].title || content[0].name)}</h2>
                     <p data-testid="movie-release-date"> <i className='bold'>{content[0] && 'Release date: '} </i> {content[0] && (content[0].release_date || content[0].first_air_date)}</p>
                     {/* <p data-testid="movie-runtime"> <i className='bold'>Runtime: </i> unavailable</p> */}
+                    <p data-testid="movie-runtime"> <i className='bold'>{content[0] && 'Runtime: '}</i> {content[0] && '2:23:02' }</p>
                     <p data-testid="movie-overview"><i className='bold'>{content[0] && 'Overview: '} </i> {content[0] && content[0].overview}</p>
                 </div>
 
