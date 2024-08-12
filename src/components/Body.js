@@ -5,10 +5,10 @@ import '../App.css';
 import Spinner from './Spinner';
 
 export default function Body() {
-    const [data] = useFetch("https://api.themoviedb.org/3/movie/top_rated?api_key=a1bfe11e0614712a754176f6b6e156ba&language=en-US&page=1");
+    const [data] = useFetch("https://api.themoviedb.org/3/movie/popular?api_key=a1bfe11e0614712a754176f6b6e156ba&language=en-US&page=1");
     return (
         <div className='theBody'>
-            <h2 className='top10'>Top 10 Movies</h2>
+            <h2 className='top10'>Popular Movies</h2>
             <div className="wrapper">
 
                 {(!data) ? <Spinner display='block' /> : < Spinner display='none' />}

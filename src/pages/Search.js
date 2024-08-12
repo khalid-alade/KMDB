@@ -32,6 +32,10 @@ export default function Search() {
     return (
 <>
         <div className='allWrapper'>
+
+        <div className='sideBar-spacer'>
+                </div>
+
             <div className='sideBar'>
                 <span className='logo2'>KhalidMDB</span>
                 <span className='logo2 logo3'>K</span>
