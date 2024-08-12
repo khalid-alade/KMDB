@@ -5,7 +5,7 @@ export default function Header() {
 
     return (
         <header>
-            <span className='logoText' >KhalidMDB</span>
+            <span className='logoText' >KMDB</span>
             <span className='inputSpan'>
                 <Link to="/search" className='input'>
                     What do you want to watch?
