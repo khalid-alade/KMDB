@@ -37,7 +37,7 @@ export default function Search() {
                 </div>
 
             <div className='sideBar'>
-                <span className='logo2'>KhalidMDB</span>
+                <span className='logo2'>KMDB</span>
                 <span className='logo2 logo3'>K</span>
 
                 <Link to="/" className='yo'>
